@@ -1,11 +1,11 @@
-alphalist = [-1]*26
+alphalist=[-1]*26
 
-string = input()
-cnt =0 
+string =input()
+cnt =0
 for i in string:
     temp = ord(i)-ord("a")
-    if alphalist[temp] == -1 :
-        alphalist[temp]= cnt
-    cnt+=1 
+    if alphalist[temp] == -1:
+        alphalist[temp]=cnt
+    cnt+=1
 
-print(" ".join(map(str,alphalist)))
+print("".join(map(str,alphalist)))
