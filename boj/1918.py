@@ -1,30 +1,32 @@
 import sys
 
-oper =list(input())
-stack=[]
-res=[]
-prior={"/":2,"*":2,"+":1,"-":1,"(":0}
+oper = list(input())
+stack =[]
+result=[]
+prior = {"/":2,"*":2,"+":1,"-":1,"(":0}
 
-for i in range(len(oper)):
-    if 'A' <= oper[i] <= 'Z' :
-        res.append(oper[i])
-
+for i in range(len(oper)) :
+    if  'A' <= oper[i] <= 'Z' :
+        result.append(oper[i])
+    
     elif oper[i] == '(' :
         stack.append(oper[i])
     
-    elif oper[i] == ')':
+    elif oper[i] == ')' :
         while True:
-            temp=stack.pop()
-            if temp =='(':
+            temp = stack.pop()
+            if temp =='(' :
                 break
-            res.append(temp)
-        
+            result.append(temp)
+
     else :
         while stack and prior[stack[-1]] >= prior[oper[i]]:
-            res.append(stack.pop())
+            result.append(stack.pop())
         stack.append(oper[i])
 
+        
 while stack:
-    res.append(stack.pop())
+    result.append(stack.pop())
+        
+print("".join(result))
 
-print("".join(res))
