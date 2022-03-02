@@ -17,7 +17,5 @@ else :
     for i in range(0,len(pos)-1):
         num=gcd(pos[i],pos[i+1])
         if ans > num :
-            ans = num      
-    print(ans)
-
-
+            ans = num  
+    print(ans)  
