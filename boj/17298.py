@@ -1,14 +1,16 @@
 import sys
 
-n = int(input())
-answer = [-1] * n
-numbers=list(map(int,input().split()))
-stack=[]
+n = int(sys.stdin.readline())
+
+result = [-1 for i in range(n)]
+array= list(map(int,sys.stdin.readline().split()))
+stack = []
 
 for i in range(n):
-    while stack and numbers[stack[-1]] < numbers[i] :
-        answer[stack.pop()]=numbers[i]
+    while stack and (array[stack[-1]]<array[i]):
+        result[stack.pop()]=array[i]
     stack.append(i)
+        
+print(result)
 
-print(" ".join(map(str,answer)))
 
